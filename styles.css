@@ -1,0 +1,45 @@
+:root{
+    --azul-escuro: midnightblue
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+}
+
+.all {
+    border-width: 2px;
+    border-style: solid;
+}
+
+#barra-lateral{
+    background-color: var(--azul-escuro);
+    height: 100vh;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+form, label, #botoes-form{
+    background-color: inherit;   
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+#botoes-form{
+    display: flex;
+    justify-content:space-evenly;
+}
+
+button{
+    width: 30%;
+}
+
+label{
+    color: white;
+}

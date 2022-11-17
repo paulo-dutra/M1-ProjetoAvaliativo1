@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../M1S01/Ex1-12/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" type="module" defer></script>
+    <title>DEVinKnowledge</title>
+</head>
+
+<body>
+    <section id="barra-lateral" class="all">
+        <form id="formulario" class="novo-item">
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" id="titulo" minlength="8" maxlength="64" required>
+
+            <label for="linguagemSkill">Linguagem/Skill:</label>
+            <input type="text" name="linguagemSkill" id="linguagemSkill" minlength="2" maxlength="16" required>
+
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria" required>
+                <option disabled>Selecione a categoria da dica</option>
+            </select>
+
+            <label for="descricao">Descrição:</label>
+            <textarea name="descricao" id="descricao" minlength="16" maxlength="512" cols="30" rows="10"
+                required></textarea>
+
+            <label for="linkYT">Link para vídeo do youtube (Opcional)</label>
+            <input type="text" name="linkYT" id="linkYT">
+
+            <div id="botoes-form">
+                <button type="submit" id="botao-salvar">Salvar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>
