@@ -1,11 +1,14 @@
-:root{
-    --azul-escuro: midnightblue
+:root {
+    --azul-escuro: midnightblue;
+    --branco: ghostwhite;
+    --lateral-esquerda: 40%;
+    --lateral-direita: 60%;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
-    background-color: beige;
+
 }
 
 .all {
@@ -13,33 +16,92 @@
     border-style: solid;
 }
 
-#barra-lateral{
+main {
+    display: flex;
     background-color: var(--azul-escuro);
     height: 100vh;
-    width: 35%;
+}
+
+header {
+    background-color: var(--azul-escuro);
+    height: fit-content;
+    display: flex;
+}
+
+header>h1 {
+    background-color: inherit;
+    width: var(--lateral-esquerda);
+}
+
+header>div {
+    width: var(--lateral-direita);
+    background-color: var(--branco);
+}
+
+#barra-lateral {
+    height: 100%;
+    width: var(--lateral-esquerda);
     display: flex;
     justify-content: center;
 }
 
-form, label, #botoes-form{
-    background-color: inherit;   
+#menuDeDicas {
+    height: 100%;
+    width: var(--lateral-direita);
+    background-color: var(--branco);
 }
 
-form{
+form,
+label,
+#botoes-form {
+    background-color: inherit;
+}
+
+form {
     display: flex;
     flex-direction: column;
     width: 80%;
 }
 
-#botoes-form{
+#botoesForm {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
 }
 
-button{
+#botoesForm>button {
     width: 30%;
 }
 
-label{
-    color: white;
+label {
+    color: var(--branco);
+}
+
+#barraDePesquisa {
+    display: flex;
+    justify-content: center;
+    height: 10%;
+}
+
+#barraDePesquisa>* {
+    height: 40%;
+    align-self: center;
+    margin: 0 10px;
+}
+
+#barraDePesquisa>input {
+    width: 70%;
+}
+
+#dicas {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+#dicas>li {
+    border: 2px solid dimgrey;
+    width: 80%;
+    margin: 1% 2.5%;
+    padding: 1% 2%;
 }

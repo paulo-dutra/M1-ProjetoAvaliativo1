@@ -12,32 +12,60 @@
 </head>
 
 <body>
-    <section id="barra-lateral" class="all">
-        <form id="formulario" class="novo-item">
-            <label for="titulo">Título:</label>
-            <input type="text" name="titulo" id="titulo" minlength="8" maxlength="64" required>
+    <header>
+        <h1>📝DEVinKnowledge</h1>
+        <div id="menuDeCards">
+            <button type="button" id="botao_0">Total<br><span class="numeroCard">10</span></button>
+        </div>
+    </header>
+    <main id="lala">
+        <section id="barra-lateral" class="all">
+            <form id="formulario" class="novo-item">
+                <label for="titulo">Título:</label>
+                <input type="text" name="titulo" id="titulo" minlength="8" maxlength="64" required>
 
-            <label for="linguagemSkill">Linguagem/Skill:</label>
-            <input type="text" name="linguagemSkill" id="linguagemSkill" minlength="2" maxlength="16" required>
+                <label for="linguagemSkill">Linguagem/Skill:</label>
+                <input type="text" name="linguagemSkill" id="linguagemSkill" minlength="2" maxlength="16" required>
 
-            <label for="categoria">Categoria:</label>
-            <select name="categoria" id="categoria" required>
-                <option disabled>Selecione a categoria da dica</option>
-            </select>
+                <label for="categoria">Categoria:</label>
+                <select name="categoria" id="categoria" required>
+                    <option disabled>Selecione a categoria da dica</option>
+                </select>
 
-            <label for="descricao">Descrição:</label>
-            <textarea name="descricao" id="descricao" minlength="16" maxlength="512" cols="30" rows="10"
-                required></textarea>
+                <label for="descricao">Descrição:</label>
+                <textarea name="descricao" id="descricao" minlength="16" maxlength="512" cols="30" rows="10"
+                    required></textarea>
 
-            <label for="linkYT">Link para vídeo do youtube (Opcional)</label>
-            <input type="text" name="linkYT" id="linkYT">
+                <label for="linkYT">Link para vídeo do youtube (Opcional)</label>
+                <input type="url" name="linkYT" id="linkYT">
 
-            <div id="botoes-form">
-                <button type="submit" id="botao-salvar">Salvar</button>
-                <button type="reset">Limpar</button>
+                <div id="botoesForm">
+                    <button type="submit" id="botao-salvar">Salvar</button>
+                    <button type="reset">Limpar</button>
+                </div>
+            </form>
+        </section>
+        <section id="menuDeDicas" class="all">
+            <div id="barraDePesquisa">
+                <input type="text" placeholder="Digite o termo ou palavra que deseja buscar">
+                <button type="button">Pesquisar</button>
+                <button type="button">Limpar</button>
             </div>
-        </form>
-    </section>
+            <hr>
+            <div id="blocoDeDicas">
+                <ul id="dicas" style="list-style-type: none;">
+                    <li>
+                        <h3>A lalalal Titulo</h3>
+                        <p>LinguagemSkill</p>
+                        <p>Categoria</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias mollitia provident deserunt officiis! Porro excepturi minima repellendus laboriosam animi. Omnis distinctio nemo quae molestiae error, praesentium vel dolore a ullam!</p>
+                        <button type="button">Excluir</button>
+                        <button type="button">Editar</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>

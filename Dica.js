@@ -3,17 +3,17 @@ export default class Dica {
     linguagemSkill
     descricao
     linkYT
-    #categoria
-    #id
-    #value //Baseado no valor utilizado no "select/option" do arquivo html 
+    categoria
+    id
+    value //Baseado no valor utilizado no "select/option" do arquivo html 
 
     constructor(titulo, linguagemSkill, categoria, descricao, value, id, linkYT = '') {
         this.titulo = titulo
         this.linguagemSkill = linguagemSkill
-        this.#categoria = categoria
+        this.categoria = categoria
         this.descricao = descricao
-        this.#value = value
-        this.#id = id
+        this.value = value
+        this.id = id
         this.linkYT = linkYT
     }
 
@@ -24,7 +24,7 @@ export default class Dica {
 
         let quantidade = 0
         arrayDicas.forEach(dica => {
-            if (dica.#value === value) {
+            if (dica.value === value) {
                 quantidade++
             }
         });
