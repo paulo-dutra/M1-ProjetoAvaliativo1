@@ -85,7 +85,6 @@ function htmlDica(objDica, novaDica) {
     } else {
         dica = document.getElementById(objDica.id)
     }
-    console.log(dica)
     let botaoYT = ''
     if (objDica.linkYT !== '') {
         botaoYT = `<a href=${objDica.linkYT} target="_blank"><button>Youtube</button></a>`
@@ -114,7 +113,7 @@ function htmlDica(objDica, novaDica) {
 //Exclui dica do html e array
 
 function excluirDica(evento) {
-    if(!confirm('Deseja realmente excluir essa dica?\nUma vez deletada as informações serão perdidas.')){
+    if (!confirm('Deseja realmente excluir essa dica?\nUma vez deletada as informações serão perdidas.')) {
         return
     }
     const idDica = (evento.target.id).split("_")[1]
@@ -155,7 +154,7 @@ function cancelarEdicao(formulario) {
 function fazEdicao(evento) {
     evento.preventDefault();
 
-    if(!confirm('Uma vez editado, os dados anteriores serão perdidos.\nDeseja realizar a alteração?')){
+    if (!confirm('Uma vez editado, os dados anteriores serão perdidos.\nDeseja realizar a alteração?')) {
         return
     }
 
@@ -182,7 +181,6 @@ function fazEdicao(evento) {
 
 function carregaDicas() {
     const dicasSalvas = localStorage.getItem('dicasSalvas')
-    console.log(dicasSalvas)
     if (dicasSalvas === null) {
         return
     }
@@ -195,19 +193,67 @@ function salvaAlteracoes() {
     localStorage.setItem('dicasSalvas', dicasSalvas)
 }
 
-function renderizaDicas(){
+function renderizaDicas() {
     dicas.forEach((dica) => htmlDica(dica, true))
+}
+
+function ativaTodasDicas() {
+    dicas.forEach(dica => {
+        const elementoDica = document.getElementById(dica.id)
+        elementoDica.className = ''
+        const dicaChildren = elementoDica.children 
+
+        const htmlTitulo = dicaChildren[0].innerHTML.split('</span>')
+        if (htmlTitulo.length !== 1){ //Quer dizer que há um elemento <span>
+            dicaChildren[0].innerHTML = htmlTitulo[0].replace('<span class="termoPesquisado">', '') + htmlTitulo[1]
+        }
+
+        const htmlDescricao = dicaChildren[3].innerHTML.split('</span>')
+        if (htmlDescricao.length !== 1){ //Quer dizer que há um elemento <span>
+            dicaChildren[3].innerHTML = htmlDescricao[0].replace('<span class="termoPesquisado">', '') + htmlDescricao[1]
+        }
+    });
+}
+
+function fazPesquisa(termoPesquisado) {
+    dicas.forEach(dica => {
+        const elementoDica = document.getElementById(dica.id)
+        if (dica.titulo.includes(termoPesquisado) || dica.descricao.includes(termoPesquisado)) { 
+            //Retorna lista com os elementos filhos da Dica (li)
+            const dicaChildren = elementoDica.children 
+            // [h3(título), p, p, p(descrição), div]
+
+            //Cria elemento span em volta do termo pesquisado (título)
+            dicaChildren[0].innerHTML = dicaChildren[0].innerHTML.replace(termoPesquisado, '<span class="termoPesquisado">' + termoPesquisado + '</span>')
+
+            //Cria elemento span em volta do termo pesquisado (descrição)
+            dicaChildren[3].innerHTML = dicaChildren[3].innerHTML.replace(termoPesquisado, '<span class="termoPesquisado">' + termoPesquisado + '</span>')
+        } else {
+            elementoDica.className = 'inativo' //Desativa dicas que não contem o termo pesquisado
+        }
+    });
 }
 
 window.addEventListener('load', addCategorias)
 window.addEventListener('load', carregaDicas)
 
 const formulario = document.getElementById('formulario')
-
 formulario.addEventListener('submit', (evento) => {
     if (formulario.className === 'novoItem') {
         addDica(evento)
     } else {
         fazEdicao(evento)
     }
+})
+
+const campoPesquisa = document.getElementById('campoPesquisa')
+const botaoPesquisa = document.getElementById('botaoPesquisa')
+botaoPesquisa.addEventListener('click', () => {
+    ativaTodasDicas()
+    fazPesquisa(campoPesquisa.value)
+})
+const botaoLimpaPesq = document.getElementById('botaoLimpaPesq')
+botaoLimpaPesq.addEventListener('click', () => {
+    ativaTodasDicas()
+    campoPesquisa.value = ''
 })

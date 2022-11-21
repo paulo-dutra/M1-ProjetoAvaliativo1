@@ -244,6 +244,10 @@ li *{
     gap: 15px;
 }
 
+span.termoPesquisado{
+    background-color: yellow;
+}
+
 .inativo{
     display: none;
 }
