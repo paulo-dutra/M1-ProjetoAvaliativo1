@@ -5,17 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../M1S01/Ex1-12/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicons/favicon16.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js" type="module" defer></script>
+    <script src="app.js" type="module" async></script>
     <title>DEVinKnowledge</title>
 </head>
 
 <body>
     <header>
-        <h1>📝DEVinKnowledge</h1>
+        <div id="logoTitulo">
+            <img src="images/livros.png" alt="Livros">
+            <div id="tituloSubtitulo">
+                <h1>DEVinKnowledge<br></h1>
+                <p id="subtitulo">O seu portal de dicas</p>
+            </div>
+        </div>
         <div id="menuDeCards">
-            <button type="button" id="botao_0">Total<br><span class="numeroCard">0</span></button>
         </div>
     </header>
     <main>
@@ -24,22 +29,24 @@
                 <h2 id="adicionar">Adicionar Dicas</h2>
                 <h2 id="editar">Editar Dica</h2>
                 <label for="titulo">Título:</label>
-                <input type="text" name="titulo" id="titulo" minlength="8" maxlength="64" required>
+                <input type="text" name="titulo" id="titulo" minlength="8" maxlength="64"
+                    placeholder="Digite um título..." required>
 
                 <label for="linguagemSkill">Linguagem/Skill:</label>
-                <input type="text" name="linguagemSkill" id="linguagemSkill" minlength="2" maxlength="16" required>
+                <input type="text" name="linguagemSkill" id="linguagemSkill" minlength="2" maxlength="16"
+                    placeholder="Digite uma linguagem ou skill..." required>
 
                 <label for="categoria">Categoria:</label>
                 <select name="categoria" id="categoria" required>
-                    <option disabled>Selecione a categoria da dica</option>
+                    <option value="" disabled selected>Selecione a categoria da dica</option>
                 </select>
 
                 <label for="descricao">Descrição:</label>
                 <textarea name="descricao" id="descricao" minlength="16" maxlength="512" cols="30" rows="10"
-                    required></textarea>
+                    placeholder="Escreva aqui sua dica de forma detalhada..." required></textarea>
 
                 <label for="linkYT">Link para vídeo do youtube (Opcional)</label>
-                <input type="url" name="linkYT" id="linkYT">
+                <input type="url" name="linkYT" id="linkYT" placeholder="https://youtube.com/...">
 
                 <div id="botoesForm">
                     <button type="submit" id="botaoSalvar">Salvar</button>
@@ -50,7 +57,7 @@
         </section>
         <section id="menuDeDicas" class="all">
             <div id="barraDePesquisa">
-                <input type="text" id="campoPesquisa" placeholder="Digite o termo ou palavra que deseja buscar">
+                <input type="text" id="campoPesquisa" placeholder="Digite o termo ou palavra que deseja buscar...">
                 <button type="button" id="botaoPesquisa"><img src="./images/loupe.png" alt="Lupa"></button>
                 <button type="button" id="botaoLimpaPesq"><img src="./images/cancel.png" alt="X para limpar"></button>
             </div>

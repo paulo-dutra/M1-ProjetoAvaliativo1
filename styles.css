@@ -13,24 +13,29 @@
     padding: 0;
 }
 
+button{
+    cursor: pointer;
+}
+
 main {
     display: flex;
     background-color: var(--azul-escuro);
     height: 100vh;
 }
 
-h1, h2{
+h1,
+h2 {
     text-align: center;
     font-size: 200%;
     font-family: 'Chakra Petch', sans-serif;
 }
 
-h2{
+h2 {
     margin-top: 30px;
     color: var(--branco);
 }
 
-h3{
+h3 {
     text-align: center;
     font-size: 125%;
 }
@@ -44,18 +49,43 @@ header {
     border-bottom: 2px solid cadetblue;
 }
 
-header>h1 {
+#logoTitulo {
     background-color: inherit;
     width: var(--lateral-esquerda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-header>div {
+#logoTitulo img{
+    width: 80px;
+    margin-right: 10px;
+}
+
+#logoTitulo h1{
+    border-bottom: 5px ridge darkorchid;
+}
+
+#tituloSubtitulo{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+#subtitulo{
+    font-size: 22px;
+    color: cornflowerblue;
+}
+
+#menuDeCards {
     width: var(--lateral-direita);
     display: flex;
     justify-content: space-evenly;
 }
 
-#menuDeCards>button{
+#menuDeCards>button {
+    transition: 200ms;
     width: 130px;
     height: 70px;
     overflow-wrap: break-word;
@@ -67,7 +97,13 @@ header>div {
     font-family: 'Russo One', sans-serif;
 }
 
-.numeroCard{
+#menuDeCards> .selecionado{
+    background-color: rgb(42, 194, 194);
+    scale: 0.95;
+    transition: 200ms;
+}
+
+.numeroCard {
     font-size: 18px;
     font-family: 'Russo One', sans-serif;
 }
@@ -94,63 +130,83 @@ label,
 form {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 70%;
+    height: 90%;
 }
 
-form #botaoReset{
+form #botaoReset {
     display: none;
 }
-form.novoItem #botaoCancelar{
+
+form.novoItem #botaoCancelar {
     display: none;
 }
-form.novoItem #botaoReset{
+
+form.novoItem #botaoReset {
     display: block;
 }
 
-form #adicionar{
+form #adicionar {
     display: none;
 }
-form.novoItem #editar{
+
+form.novoItem #editar {
     display: none;
 }
-form.novoItem #adicionar{
+
+form.novoItem #adicionar {
     display: block;
 }
 
-form>label{
+form>label {
     margin-top: 6%;
     margin-bottom: 2%;
     font-size: 18px;
 }
 
-form>input,form>select{
+form>input,
+form>select {
     border-radius: 15px;
     height: 30px;
     padding: 0px 10px;
     font-size: 16px;
 }
 
-form>textarea{
+form>textarea {
     border-radius: 15px;
     padding: 10px 10px;
     font-size: 16px;
 }
 
-form input, form select,form textarea{
+form input,
+form select,
+form textarea {
     background-color: rgb(240, 193, 193);
 }
 
-form.novoItem input, form.novoItem select, form.novoItem textarea{
+form.novoItem input,
+form.novoItem select,
+form.novoItem textarea {
     background-color: var(--branco);
 }
 
-form h2{
+form h2 {
     color: crimson;
 }
 
-form.novoItem h2,form label{
+form.novoItem h2,
+form label {
     color: var(--branco);
 }
+
+form select {
+    color: gray;
+}
+
+form select:focus {
+    color: #000;
+}
+
 
 #botoesForm {
     margin-top: 10%;
@@ -170,11 +226,12 @@ form.novoItem h2,form label{
     font-weight: bolder;
 }
 
-#botaoSalvar{
+#botaoSalvar {
     background-color: rgb(106, 207, 6);
 }
 
-#botaoReset,#botaoCancelar {
+#botaoReset,
+#botaoCancelar {
     background-color: rgb(201, 28, 28);
 }
 
@@ -193,23 +250,34 @@ form.novoItem h2,form label{
 
 #barraDePesquisa>input {
     width: 70%;
+    border-radius: 20px;
+    padding: 0px 10px;
+    border-style: solid;
+    border-color: rgb(88, 88, 88);
 }
 
-#barraDePesquisa button{
+#barraDePesquisa button {
     background-color: inherit;
     border-style: hidden;
     border-radius: 100%;
 }
 
-#barraDePesquisa button :hover{
+#barraDePesquisa button :hover {
     width: 40px;
     margin: 0px;
     transition: 200ms;
 }
 
-#barraDePesquisa img{
+#barraDePesquisa img {
     margin: 0px 5px;
     width: 30px;
+}
+
+#blocoDeDicas{
+    height: 85%;
+    bottom: 0px;
+    right: 0px;
+    overflow-y: auto;
 }
 
 #dicas {
@@ -217,7 +285,6 @@ form.novoItem h2,form label{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    overflow-y: auto;
 }
 
 #dicas>li {
@@ -234,20 +301,63 @@ form.novoItem h2,form label{
     box-shadow: 0px 0px 10px black;
 }
 
-li *{
+li * {
     margin: 8px 0px;
 }
 
-.botoesDica{
+.botoesDica {
+    margin: 0px;
+    height: 50px;
     display: flex;
     justify-content: flex-end;
-    gap: 15px;
+    gap: 25px;
+    align-items: center;
 }
 
-span.termoPesquisado{
+.botoesDica button {
+    transition: 200ms;
+    border-radius: 100%;
+    background-color: rgb(207, 207, 207);
+    border-color: gray;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: rgb(207, 207, 207);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.botoesDica img {
+    height: 20px;
+    position: absolute;
+}
+
+.botoesDica a {
+    text-decoration: none;
+}
+
+.botoesDica button:hover img {
+    visibility: hidden;
+}
+
+.botoesDica button:hover {
+    transition: 200ms;
+    scale: 1.2;
+    background-color: rgb(235, 233, 233);
+    color: black;
+}
+
+span.termoPesquisado {
     background-color: yellow;
 }
 
-.inativo{
+.inativo {
+    display: none;
+}
+
+.invisivel{
     display: none;
 }
