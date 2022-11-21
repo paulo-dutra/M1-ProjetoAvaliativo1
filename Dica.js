@@ -24,11 +24,11 @@ export default class Dica {
 
         let quantidade = 0
         arrayDicas.forEach(dica => {
-            if (dica.value === value) {
+            if (dica.value === JSON.stringify(value)) {
                 quantidade++
             }
         });
-        console.log(quantidade)
+        return quantidade
     }
 }
 

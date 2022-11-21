@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Russo+One&display=swap');
+
 :root {
-    --azul-escuro: midnightblue;
+    --azul-escuro: rgb(14, 14, 151);
     --branco: ghostwhite;
+    --roxo: rgb(165, 14, 165);
     --lateral-esquerda: 40%;
     --lateral-direita: 60%;
 }
@@ -8,12 +11,6 @@
 * {
     margin: 0;
     padding: 0;
-
-}
-
-.all {
-    border-width: 2px;
-    border-style: solid;
 }
 
 main {
@@ -22,10 +19,29 @@ main {
     height: 100vh;
 }
 
+h1, h2{
+    text-align: center;
+    font-size: 200%;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+h2{
+    margin-top: 30px;
+    color: var(--branco);
+}
+
+h3{
+    text-align: center;
+    font-size: 125%;
+}
+
 header {
-    background-color: var(--azul-escuro);
-    height: fit-content;
+    background-color: var(--roxo);
+    height: 100px;
     display: flex;
+    align-items: center;
+    font-size: 20px;
+    border-bottom: 2px solid cadetblue;
 }
 
 header>h1 {
@@ -35,10 +51,28 @@ header>h1 {
 
 header>div {
     width: var(--lateral-direita);
-    background-color: var(--branco);
+    display: flex;
+    justify-content: space-evenly;
 }
 
-#barra-lateral {
+#menuDeCards>button{
+    width: 130px;
+    height: 70px;
+    overflow-wrap: break-word;
+    border-radius: 10px;
+    border-width: 4px;
+    border-style: outset;
+    border-color: blueviolet;
+    background-color: mintcream;
+    font-family: 'Russo One', sans-serif;
+}
+
+.numeroCard{
+    font-size: 18px;
+    font-family: 'Russo One', sans-serif;
+}
+
+#barraLateral {
     height: 100%;
     width: var(--lateral-esquerda);
     display: flex;
@@ -53,8 +87,8 @@ header>div {
 
 form,
 label,
-#botoes-form {
-    background-color: inherit;
+#botoesForm {
+    background-color: var(--azul-escuro);
 }
 
 form {
@@ -63,22 +97,91 @@ form {
     width: 80%;
 }
 
+form #botaoReset{
+    display: none;
+}
+form.novoItem #botaoCancelar{
+    display: none;
+}
+form.novoItem #botaoReset{
+    display: block;
+}
+
+form #adicionar{
+    display: none;
+}
+form.novoItem #editar{
+    display: none;
+}
+form.novoItem #adicionar{
+    display: block;
+}
+
+form>label{
+    margin-top: 6%;
+    margin-bottom: 2%;
+    font-size: 18px;
+}
+
+form>input,form>select{
+    border-radius: 15px;
+    height: 30px;
+    padding: 0px 10px;
+    font-size: 16px;
+}
+
+form>textarea{
+    border-radius: 15px;
+    padding: 10px 10px;
+    font-size: 16px;
+}
+
+form input, form select,form textarea{
+    background-color: rgb(240, 193, 193);
+}
+
+form.novoItem input, form.novoItem select, form.novoItem textarea{
+    background-color: var(--branco);
+}
+
+form h2{
+    color: crimson;
+}
+
+form.novoItem h2,form label{
+    color: var(--branco);
+}
+
 #botoesForm {
+    margin-top: 10%;
     display: flex;
     justify-content: space-evenly;
 }
 
 #botoesForm>button {
-    width: 30%;
+    width: 40%;
+    height: 40px;
+    border-radius: 20px;
+    border-style: groove;
+    border-width: 3px;
+    border-color: darkcyan;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
 }
 
-label {
-    color: var(--branco);
+#botaoSalvar{
+    background-color: rgb(106, 207, 6);
+}
+
+#botaoReset,#botaoCancelar {
+    background-color: rgb(201, 28, 28);
 }
 
 #barraDePesquisa {
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 10%;
 }
 
@@ -92,7 +195,25 @@ label {
     width: 70%;
 }
 
+#barraDePesquisa button{
+    background-color: inherit;
+    border-style: hidden;
+    border-radius: 100%;
+}
+
+#barraDePesquisa button :hover{
+    width: 40px;
+    margin: 0px;
+    transition: 200ms;
+}
+
+#barraDePesquisa img{
+    margin: 0px 5px;
+    width: 30px;
+}
+
 #dicas {
+    margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -102,6 +223,27 @@ label {
 #dicas>li {
     border: 2px solid dimgrey;
     width: 80%;
+    height: fit-content;
     margin: 1% 2.5%;
     padding: 1% 2%;
+    overflow-wrap: break-word;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: lightgrey;
+    box-shadow: 0px 0px 10px black;
+}
+
+li *{
+    margin: 8px 0px;
+}
+
+.botoesDica{
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.inativo{
+    display: none;
 }

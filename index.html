@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -15,12 +15,14 @@
     <header>
         <h1>📝DEVinKnowledge</h1>
         <div id="menuDeCards">
-            <button type="button" id="botao_0">Total<br><span class="numeroCard">10</span></button>
+            <button type="button" id="botao_0">Total<br><span class="numeroCard">0</span></button>
         </div>
     </header>
-    <main id="lala">
-        <section id="barra-lateral" class="all">
-            <form id="formulario" class="novo-item">
+    <main>
+        <section id="barraLateral" class="all">
+            <form id="formulario" class="novoItem">
+                <h2 id="adicionar">Adicionar Dicas</h2>
+                <h2 id="editar">Editar Dica</h2>
                 <label for="titulo">Título:</label>
                 <input type="text" name="titulo" id="titulo" minlength="8" maxlength="64" required>
 
@@ -40,16 +42,17 @@
                 <input type="url" name="linkYT" id="linkYT">
 
                 <div id="botoesForm">
-                    <button type="submit" id="botao-salvar">Salvar</button>
-                    <button type="reset">Limpar</button>
+                    <button type="submit" id="botaoSalvar">Salvar</button>
+                    <button type="reset" id="botaoReset">Limpar</button>
+                    <button type="reset" id="botaoCancelar">Cancelar</button>
                 </div>
             </form>
         </section>
         <section id="menuDeDicas" class="all">
             <div id="barraDePesquisa">
                 <input type="text" placeholder="Digite o termo ou palavra que deseja buscar">
-                <button type="button">Pesquisar</button>
-                <button type="button">Limpar</button>
+                <button type="button"><img src="./images/loupe.png" alt="Lupa"></button>
+                <button type="button"><img src="./images/cancel.png" alt="X para limpar"></button>
             </div>
             <hr>
             <div id="blocoDeDicas">
