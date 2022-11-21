@@ -1,4 +1,4 @@
-import Dica from './Dica.js'
+import Dica, { dicasIniciais } from './Dica.js'
 
 let dicas = []
 
@@ -187,7 +187,14 @@ function fazEdicao(evento) {
 function carregaDicas() {
     const dicasSalvas = localStorage.getItem('dicasSalvas')
     if (dicasSalvas === null) {
-        return
+        alert("Este é o seu primeiro acesso à aplicação DEVinKnowledge - Portal de Dicas\nSeja muito bem vindo, sugerimos a leitura do arquivo README para entender todas as funcionalidades do sistema!")
+        if (confirm("Por ser sua primeira vez na página, gostaria de populá-la com algumas dicas já prontas?\n(Não se preocupe, caso deseje acessar estas dicas depois, basta limpar o seu LocalStorage!)")) {
+            dicas = [...dicasIniciais]
+            renderizaDicas()
+            return
+        } else {
+            return
+        }
     }
     dicas = JSON.parse(dicasSalvas)
     renderizaDicas()
@@ -248,19 +255,19 @@ function filtraCategorias(evento) {
         idBotao = evento.target.id
     }
     const categoria = Number(idBotao.split('_')[1])
-    if (categoria != 0){
+    if (categoria != 0) {
         filtroCategorias[0] = false
     }
     filtroCategorias[categoria] = !filtroCategorias[categoria]
 
     const botoesAtivados = filtroCategorias.reduce((acc, elemento) => {
-        if(elemento){
+        if (elemento) {
             acc++
         }
         return acc
-    },0)
+    }, 0)
 
-    if (botoesAtivados === filtroCategorias.length - 1 || botoesAtivados===0) {
+    if (botoesAtivados === filtroCategorias.length - 1 || botoesAtivados === 0) {
         filtroCategorias[0] = true
     }
 
@@ -273,12 +280,12 @@ function filtraCategorias(evento) {
         dicas.forEach(dica => {
             document.getElementById(dica.id).classList.remove('invisivel')
         })
-    }else{
+    } else {
         document.getElementById('botao_0').className = ''
         for (let i = 1; i < filtroCategorias.length; i++) {
-            if(filtroCategorias[i]){
-                document.getElementById('botao_'+ i).className = 'selecionado'
-            }else{
+            if (filtroCategorias[i]) {
+                document.getElementById('botao_' + i).className = 'selecionado'
+            } else {
                 document.getElementById('botao_' + i).className = ''
             }
         }
@@ -291,7 +298,7 @@ function filtraCategorias(evento) {
         })
     }
 
-    
+
 }
 
 window.addEventListener('load', addCategorias)
@@ -317,3 +324,4 @@ botaoLimpaPesq.addEventListener('click', () => {
     ativaTodasDicas()
     campoPesquisa.value = ''
 })
+
