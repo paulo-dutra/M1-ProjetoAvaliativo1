@@ -43,7 +43,7 @@ do card (Botões para excluir, editar e acessar vídeo).
 
 Alteração na cor do formulário caso seja selecionada a opção "editar" de alguma dica.
 
-![Formulario de cadastro](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/formcadastro.png)![Formulario de edicao](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/formedicao.png)
+![Formulario de cadastro](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/imagesREADME/formcadastro.png) ![Formulario de edicao](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/imagesREADME/formedicao.png)
 
 Adição de movimento nos botões das dicas e da barra de pesquisa quando o usuário passar o cursos sobre eles.
 
