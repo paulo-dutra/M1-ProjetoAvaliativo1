@@ -43,27 +43,27 @@ do card (Botões para excluir, editar e acessar vídeo).
 
 Alteração na cor do formulário caso seja selecionada a opção "editar" de alguma dica.
 
-![Formulario de cadastro](/M1-ProjetoAvaliativo1/imagesREADME/formcadastro.png)![Formulario de edicao](/M1-ProjetoAvaliativo1/imagesREADME/formedicao.png)
+![Formulario de cadastro](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/formcadastro.png)![Formulario de edicao](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/formedicao.png)
 
 Adição de movimento nos botões das dicas e da barra de pesquisa quando o usuário passar o cursos sobre eles.
 
-![Botao dinamico](/M1-ProjetoAvaliativo1/imagesREADME/movimbotao.png)
+![Botao dinamico](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/imagesREADME/movimbotao.png)
 
 Pesquisa de termos no título e na descrição das dicas.
 
 Quando realizada uma pesquisa, caso o termo pesquisado seja encontrado, este será grifado de amarelo para facilitar a visualização do usuário.
 
-![Exemplo de pesquisa](/M1-ProjetoAvaliativo1/imagesREADME/pesquisa.png)
+![Exemplo de pesquisa](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/imagesREADME/pesquisa.png)
 
 Os cards de estatística funcionam também como filtros de categoria: caso o usuário clique sobre algum deles serão exibidas somente as dicas daquela categoria. 
 
-![Filtro de categoria](/M1-ProjetoAvaliativo1/imagesREADME/filtrocard.png)
+![Filtro de categoria](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/imagesREADME/filtrocard.png)
 
 Obs: É possível selecionar mais de uma categoria para ser exibida ao mesmo tempo. A mudança de cor do card mostra qual categoria esta sendo filtrada.
 
 Obs.2: Clicar no card "Total" fará um reset dos filtros. Caso o usuário tente ativar todas as categorias individualmente, o card "Total" será ativado no lugar.
 
-![Filtros simultaneos](/M1-ProjetoAvaliativo1/imagesREADME/filtrosimultaneo.png) ![Exibicao de todas categorias](/M1-ProjetoAvaliativo1/imagesREADME/total.png)
+![Filtros simultaneos](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/imagesREADME/filtrosimultaneo.png) ![Exibicao de todas categorias](https://github.com/paulo-dutra/M1-ProjetoAvaliativo1/blob/main/imagesREADME/total.png)
 
 Caso seja o primeiro acesso do usuário ao sistema ou o localstorage esteja vazio, será oferecida a opção de popular a página com dicas pré-cadastradas.
 
